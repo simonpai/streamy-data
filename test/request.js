@@ -3,7 +3,7 @@ var assert = require('assert'),
 	array = require('stream-array'),
 	gulp = require('gulp');
 
-describe('Request', function() {
+describe('request', function() {
 	
 	describe('basic', function() {
 		it('Basic request example, not a test yet.', function() {

@@ -22,9 +22,10 @@ gulp.task('test', function() {
 /*
 gulp.task('demo', function() {
 	
-	return array(['http://www.google.com', 'http://www.yahoo.com'])
-		.pipe(chop.request())
-		.pipe(chop.echo());
+	chop.ptt.util.currentPageIndex('Gossiping', function (err, index) {
+		chop.count({start: index, step: -1, end: index - 10})
+			.pipe(chop.echo());
+	});
 	
 });
 */

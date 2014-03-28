@@ -1,6 +1,7 @@
 var map = require('./lib/map'),
 	request = require('./lib/request'),
-	echo = require('./lib/echo');
+	echo = require('./lib/echo'),
+	count = require('./lib/count');
 
 /*
 var chop = function (gulp) {
@@ -22,5 +23,6 @@ chop.echo = echo;
 module.exports = {
 	map: map,
 	request: request,
-	echo: echo
+	echo: echo,
+	count: count
 };
