@@ -5,7 +5,8 @@
     "gulp": "^3.5.6",
     "gulp-util": "^2.2.14",
     "request": "^2.34.0",
-    "couchbase": "^1.2.1"
+    "couchbase": "^1.2.1",
+    "dequeue": "^1.0.5"
   },
   "devDependencies": {
     "gulp-mocha": "^0.4.1",

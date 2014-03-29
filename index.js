@@ -1,7 +1,9 @@
 var map = require('./lib/map'),
 	request = require('./lib/request'),
 	echo = require('./lib/echo'),
-	count = require('./lib/count');
+	count = require('./lib/count'),
+	PageCrawlingStream = require('./lib/page-crawling-stream'),
+	ptt = require('./lib/ptt');
 
 /*
 var chop = function (gulp) {
@@ -24,5 +26,7 @@ module.exports = {
 	map: map,
 	request: request,
 	echo: echo,
-	count: count
+	count: count,
+	PageCrawlingStream: PageCrawlingStream,
+	ptt: ptt
 };
