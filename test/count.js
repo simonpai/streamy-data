@@ -1,5 +1,5 @@
 var assert = require('assert'),
-	chop = require('../index.js'),
+	sdata = require('../index.js'),
 	gulp = require('gulp');
 
 describe('count', function() {
@@ -9,12 +9,12 @@ describe('count', function() {
 			
 			gulp.task('count', function() {
 				
-				return chop.count({end: 10})
-					.pipe(chop.echo());
+				return sdata.count({end: 10})
+					.pipe(sdata.echo());
 				
 			});
 			
-			gulp.run('request');
+			gulp.run('count');
 			
 		});
 	});

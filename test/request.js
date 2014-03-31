@@ -1,6 +1,5 @@
 var assert = require('assert'),
-	chop = require('../index.js'),
-	array = require('stream-array'),
+	sdata = require('../index.js'),
 	gulp = require('gulp');
 
 describe('request', function() {
@@ -10,9 +9,9 @@ describe('request', function() {
 			
 			gulp.task('request', function() {
 				
-				return array(['http://www.google.com', 'http://www.yahoo.com'])
-					.pipe(chop.request())
-					.pipe(chop.echo());
+				return sdata.array(['http://www.google.com', 'http://www.yahoo.com'])
+					.pipe(sdata.request())
+					.pipe(sdata.echo());
 				
 			});
 			

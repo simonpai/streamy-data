@@ -1,20 +1,19 @@
 {
-  "name": "gulp-chop-util",
+  "name": "streamy-data",
   "version": "0.1.0",
   "dependencies": {
-    "gulp": "^3.5.6",
-    "gulp-util": "^2.2.14",
     "request": "^2.34.0",
-    "couchbase": "^1.2.1",
-    "dequeue": "^1.0.5"
+    "dequeue": "^1.0.5",
+    "stream-array": "^0.1.3"
   },
   "devDependencies": {
-    "gulp-mocha": "^0.4.1",
-    "stream-array": "^0.1.3"
+    "gulp": "^3.5.6",
+    "gulp-util": "^2.2.14",
+    "gulp-mocha": "^0.4.1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/simonpai/gulp-chop.git"
+    "url": "git://github.com/simonpai/streamy-data.git"
   },
   "author": "simonpai",
   "license": "MIT"

@@ -1,2 +1,2 @@
-gulp-chop
+streamy-data
 =========
