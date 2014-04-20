@@ -1,7 +1,7 @@
 {
   "name": "streamy-data",
   "description": "Utility functions to work on data collection in Stream format.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/simonpai/streamy-data",
   "repository": "git://github.com/simonpai/streamy-data.git",
   "main": "index.js",
