@@ -28,9 +28,8 @@ var streamy = require('streamy-data');
 
 streamy.ptt.board('food', { limit: 2 }) // start with a readable stream which emits post URLs
 	.pipe(streamy.ptt.post()) // a transform stream which map the URL to post content
-	.pipe(streamy.echo()) // prints stream content to console.log, and passes the data through
 	.on('data', function (data) {
-		// or do something in an explicit handler
+		// do something in an explicit handler
 	})
 	.on('end', function () {
 		// or do something when the stream ends
@@ -46,32 +45,15 @@ Return a readable string which iterates through the array.
 
 ```js
 streamy.array(['A', 'B', 'C'])
-	.pipe(streamy.echo());
+	.on('data', function (data) {
+		console.log(data);
+	});
 ```
 
 ####array
 Type: `Array`
 
 The source array.
-
-###streamy.echo([map, where])
-
-Return a pass-through stream (which doesn't modify data) that prints out its content to console.
-
-```js
-gulp.src(['*.js'])
-	.pipe(streamy.echo());
-```
-
-####map
-Type: `Function: * -> *`
-
-Transform printed data, if specified.
-
-####where
-Type: `Function: * -> boolean`
-
-Filter printed data, if specified.
 
 ###streamy.map(func)
 
@@ -85,10 +67,13 @@ someReadableStream
 			callback(error);
 			return;
 		}
-		// do something
+		// do some transformation
+		// data = data + 1
 		callback(null, data);
 	}))
-	.pipe(streamy.echo());
+	.on('data', function (data) {
+		console.log(data);
+	});
 ```
 
 ####func
@@ -103,10 +88,13 @@ The synchronous version of `streamy.map`.
 ```js
 someReadableStream
 	.pipe(streamy.map.sync(function (data) {
-		// do something
+		// do some transformation
+		// data = data + 1
 		return data;
 	}))
-	.pipe(streamy.echo());
+	.on('data', function (data) {
+		console.log(data);
+	});
 ```
 
 ####func
@@ -138,7 +126,9 @@ Return a readable stream which emits post links in the PTT board, in descending 
 
 ```js
 streamy.ptt.board('food', { limit: 2 })
-	.pipe(streamy.echo());
+	.on('data', function (data) {
+		console.log(data);
+	});
 ```
 
 Output format:
@@ -187,7 +177,7 @@ Output format:
 	board: (board name string),
 	post: (post id string),
 	title: (post title string),
-	raw: (the html body string),
+	raw: (the html body string), // if the raw flag is true
 	meta: [
 		{ tag: '作者', value: ... },
 		{ tag: '站內', value: ... },
@@ -206,7 +196,9 @@ Output format:
 ```js
 streamy.ptt.board('food', { limit: 2 })
 	.pipe(streamy.ptt.post())
-	.pipe(streamy.echo())
+	.on('data', function (data) {
+		console.log(data);
+	});
 ```
 
 ####options.raw
