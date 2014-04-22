@@ -4,7 +4,8 @@ var array = require('stream-array'),
 	map = require('./lib/map'),
 	enumerate = require('./lib/enumerate'),
 	http = require('./lib/http'),
-	ptt = require('./lib/ptt');
+	ptt = require('./lib/ptt'),
+	couch = require('./lib/couch');
 
 module.exports = {
 	map: map,
@@ -12,6 +13,7 @@ module.exports = {
 	enumerate: enumerate,
 	http: http,
 	ptt: ptt,
+	couch: couch,
 	stream: {
 		PagedReadableStream: PagedReadableStream,
 		WebpageCrawlingStream: WebpageCrawlingStream
