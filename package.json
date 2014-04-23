@@ -3,7 +3,6 @@
   "description": "Utility functions to work on data collection in Stream format.",
   "version": "0.1.1",
   "homepage": "https://github.com/simonpai/streamy-data",
-  "repository": "git://github.com/simonpai/streamy-data.git",
   "main": "index.js",
   "dependencies": {
     "request": "^2.34.0",
