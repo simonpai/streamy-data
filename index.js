@@ -1,4 +1,6 @@
 var array = require('stream-array'),
+	request = require('./lib/util/request'),
+	htmlparser = require('./lib/util/htmlparser'),
 	PagedReadableStream = require('./lib/stream/paged-readable-stream'),
 	WebpageCrawlingStream = require('./lib/stream/webpage-crawling-stream'),
 	map = require('./lib/map'),
@@ -17,5 +19,9 @@ module.exports = {
 	stream: {
 		PagedReadableStream: PagedReadableStream,
 		WebpageCrawlingStream: WebpageCrawlingStream
+	},
+	util: {
+		request: request,
+		htmlparser: htmlparser
 	}
 };
