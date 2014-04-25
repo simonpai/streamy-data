@@ -1,3 +1,7 @@
+0.2.1
+
+* move text method to util/htmlparser.
+
 0.2.0
 
 * added couchbase streams.
