@@ -1,6 +1,8 @@
 0.2.1
 
-* move text method to util/htmlparser.
+* moved text method to util/htmlparser.
+* added vinyl support.
+* add util/wait, stream/endsOf
 
 0.2.0
 
