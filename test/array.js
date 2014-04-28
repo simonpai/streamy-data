@@ -1,5 +1,4 @@
 var assert = require('assert'),
-	gulp = require('gulp'),
 	streamy = require('../index.js');
 
 describe('array', function () {
@@ -7,7 +6,7 @@ describe('array', function () {
 	this.timeout(3000);
 	
 	it('array A', function (done) {
-			
+		
 		var len = 50,
 			input = [],
 			output = [];
