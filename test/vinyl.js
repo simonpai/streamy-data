@@ -39,4 +39,50 @@ describe('vinyl', function () {
 		
 	});
 	
+	it('vinylify: contents', function (done) {
+		
+		var a = { x: 'a', y: 1 },
+			b = { x: 'b', y: 2 };
+		
+		streamy.array([a, b])
+			.pipe(streamy.file.vinylify('x', {
+				contents: 'y'
+			}))
+			.pipe(streamy.file.dest(testPath))
+			.on('data', function () {})
+			.on('end', function () {
+				assert.deepEqual(fs.readdirSync(testPath), ['a', 'b']);
+				[a, b].forEach(function (v) {
+					assert.equal(JSON.parse(fs.readFileSync(testPath + '/' + v.x)), v.y);
+				});
+				clear(done);
+			});
+		
+	});
+	
+	it('vinylify: space', function (done) {
+		
+		// TODO: also test replacer
+		var space = '\t';
+		
+		var a = { x: 'a', y: 1 },
+			b = { x: 'b', y: 2 };
+		
+		streamy.array([a, b])
+			.pipe(streamy.file.vinylify('x', {
+				stringify: { space: space }
+			}))
+			.pipe(streamy.file.dest(testPath))
+			.on('data', function () {})
+			.on('end', function () {
+				assert.deepEqual(fs.readdirSync(testPath), ['a', 'b']);
+				[a, b].forEach(function (v) {
+					assert.equal(fs.readFileSync(testPath + '/' + v.x, 'utf8'), 
+						JSON.stringify(v, null, space));
+				});
+				clear(done);
+			});
+		
+	});
+	
 });

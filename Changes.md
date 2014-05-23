@@ -1,3 +1,7 @@
+0.2.2
+
+* added contents, replacer, space configuration to vinylify
+
 0.2.1
 
 * moved text method to util/htmlparser.
